@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand" href="#">Online Courses Learning Platforms</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li *ngIf="authService.isUserLoggedIn()" class="nav-item">
+            <a class="nav-link" href="#home" routerLink="/home" routerLinkActive="active">Home</a>
+          </li>
+          <li *ngIf="authService.isUserLoggedIn()" class="nav-item">
+            <a class="nav-link" href="#services" routerLink="/services" routerLinkActive="active">Services</a>
+          </li>
+          <li *ngIf="authService.isUserLoggedIn()" class="nav-item">
+            <a class="nav-link" href="#contact" routerLink="/contact" routerLinkActive="active">Contact</a>
+          </li>
+          <li *ngIf="!authService.isUserLoggedIn()" class="nav-item">
+            <a class="nav-link" href="#login" routerLink="/login" routerLinkActive="active">Login</a>
+          </li>
+          <li *ngIf="authService.isUserLoggedIn()" class="nav-item">
+            <a class="nav-link text-white" href="#logout" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  

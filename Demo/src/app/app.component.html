@@ -1,0 +1,47 @@
+<!-- This is Parent Component -->
+
+<!-- <h1>{{title}}</h1> -->
+
+<!-- parent to child -->
+<app-header [childtitle]="ctitle" [childarr]="carr"></app-header>
+
+<app-header [childtitle]="ctitle1" [childarr]="carr1"></app-header>
+
+<!-- child to parent -->
+<!-- <app-header (customeve)="cdata=$event" [childtitle]="ctitle1" [childarr]="carr1"></app-header> -->
+
+
+<!-- {{cdata}}
+
+<div>parent Component:{{cdata}}</div> -->
+
+<!-- child to parent through template reference -->
+
+<!-- <app-header #child></app-header>
+child data in parent:{{child.data}} -->
+
+<!-- <button (click)="test()">click</button>
+<app-header></app-header>
+<div>
+    Data from child:{{cdata1}}
+</div> -->
+
+
+<!-- DOM Manipulation -->
+<!-- <div #temp>this is for DOM manipulation</div>
+
+<button (click)="changeinElement()">Click</button><br>
+
+Name:<input type="text" #test>
+ -->
+
+
+<!-- <p #para>This is paragraph1</p>
+
+<p #para>This is paragraph2</p>
+
+<h1 #heading>This is heading1</h1>
+
+<h1 #heading>This is heading2</h1>
+
+<button (click)="testForViewChildren()">click</button> -->
