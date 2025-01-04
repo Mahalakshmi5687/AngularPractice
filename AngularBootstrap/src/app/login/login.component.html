@@ -1,0 +1,24 @@
+<div class="wrapper fadeInDown text-center m-lg-5 p-lg-5">
+    <div id="formContent" class="d-flex flex-column align-items-center">
+      <h3>Login</h3>
+      <form (submit)="onLogin(); $event.preventDefault()" class="w-100 d-flex flex-column align-items-center">
+        <div class="mb-3 w-100 d-flex justify-content-center">
+            <div class="col-sm-4">
+                <input type="email" [(ngModel)]="email" name="email" placeholder="Email" class="form-control">
+            </div>
+        </div>
+        <div class="mb-3 w-100 d-flex justify-content-center">
+            <div class="col-sm-4">
+                <input type="password" [(ngModel)]="password" name="password" placeholder="Password" class="form-control"/>
+            </div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary w-25">Log In</button>
+        </div>
+        <pre>default <strong>email:</strong>login@gmail.com
+default <strong>password</strong>:1234
+        </pre>
+      </form>
+      <p class="text-danger">{{ loginError }}</p>
+    </div>
+</div>

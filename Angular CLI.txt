@@ -1,0 +1,676 @@
+Angular CLI:
+Part 1 - what is Angular CLI
+  *What is Angular CLI
+  *Why should we use Angular CLI and the
+    benefits it provide          
+Manually setting up an Angular application from scratch
+Create application folder and add the configuration files
+Install the packages
+Create root application component - app.component.ts(Every angular application should have one component which is the root component and this one component bootstraps the anguar application)
+Create root application module - app.module.ts
+Create main.ts file - which is main entry point of our application
+Create index.html
+
+Manually setting up is time consuming and leborious
+
+What is Angular CLI
+Angular CLI is command line tool that help us to
+Create Angular applications faster and with great consistency
+Create the boiler plate code for angular features like components, directives, pipes, services etc
+Create boiler plate code for TypeScript feature like classes, interfaces, enums etc
+It follows angular best practices and convenctions out of the box
+Run Unit and End-to-End(e2e) tests
+Create optimized builds for deployment to production
+
+
+Installing Angular CLI:
+Part 2 - How to Install Angular CLI
+Prerequisites: Node 6.9.0 or higher & NPM 3 or higher
+
+To Check the versions use-
+node -v
+npm -v
+
+To get the latest version of Node and NPM
+https://nodejs.org/en/download/
+
+To install Angular CLI
+npm install -g @angular/cli
+OR
+npm i -g @angular/cli(Flag -g installs Angular CLI globally)
+
+To verify the version of Angular CLI installed
+ng version
+
+If you run into problems installing Angular CLI
+Delete "npm" folder from C:\Users\Your_UserName\AppData\Roaming
+Note: Make sure "Show hidden files, folders, and drivers" option is turned on
+Uninstall and reinstall node.js (go to control panel -> features -> uninstall node.js)
+Install Angular CLI again
+
+
+Part 3- Angular CLI Create New Project
+How to create a new angular project from scratch using Angular CLI
+Run the app
+Run unit and end-to-end test
+
+To create a new application project
+ng new MyFirstApp
+To run application
+ng serve --open(runs the project in your default browser)
+To run all Unit test 
+ng test
+To run all e2e test
+ng e2e
+
+
+Part 4- Customize Command Prompt
+How to customize command prompt window
+if do ng --help
+all cmds which are there in angular cli should show but due to screen size of cmd prmt it will not show all.
+To increase the screen buffer size, increase the height property value under Screen Buffer Size section on the Layout tab in the Properties window
+   To redirect the output of a command to windows clipboard 
+     ng --help | clip
+   To redirect the output of a command to a text document
+     ng --help > Help.txt
+     ng --help > Help.doc
+   From the properties window of the command prompt we can also change the cursor size, font           size, font colour and background colour.
+
+
+Part 5- Angular CLI ng new options
+Options that we can use with ng new command
+ng new App1 - will creates new project with name App1
+ng new --help - help to list all the options that we can use with ng new command 
+	*ng new --dry-run(ng new -d) - this command will lists out all the files it will create instead it will not actually create any files or folders.
+	*ng new App1 --skip-install(ng new App1 -si) - creates all required files and folders but skips nodemodules which takes more time. to install nodemodules we use npm install.
+	*ng new App3 -si --skip-tests(ng new App3 -si -st) - skips generating unit test cases file(spect file) and nodemodules.
+	*ng new App4 -si -st -inline-template(ng new App4 -si -st -it) - creates all required files and folders but skips nodemodules and spect files(test cases file) and html file instead of creating html file it makes it as inline template.
+	*ng new App5 -si -st -it --inline-style(ng new App4 -si -st -it -is) - creates all required files and folders but skips nodemodules and spect files(test cases file) and html file instead of creating html file it makes it as inline template and skips external css files instead it makes inline style.
+
+
+Part 6- Angular CLI Configuration File
+Significance of the Angular CLI configuration file(.angular-cli.json)
+
+-ng new App5 --style scss - it creates the project with scss style file.
+
+	-ng generate component abc(ng g c abc) - it creates a component with name abc.
+	due we created App5 project with scss the component also creates with scss file only.	
+	-ng g c xyz --style css - it creates a component with name xyz with css style file.
+	-we can change the prefix of project using prefix and ng new command(ng new App6 --prefix maha)
+	we can also override the prefix by prefix cmd (ng g c xyz --prefix tech) this will override maha with tech.
+
+The settings from the Angular CLI configuration file are used when we :
+*Generate angular features likes components, pipes, services etc.
+*Run unit and end-to-end tests.
+*Build the application etc.
+
+Please note: The values in the Angular CLI configuration file depends on the options that you have used with the "ng new" command when generating a new angular project
+
+
+What is Angular CLI? 
+
+Angular CLI is a command line tool that can aid in creating new Angular projects from scratch or adding various elements to an existing Angular application. This tool is not essential in building an Angular project, but it does provide several benefits, especially for someone who does not have much experience with Angular. 
+
+This tool will create a new project that is ready to run immediately. It will create all needed plumbing to get everything up and running in a matter of minutes, generating an application structure that is based on best practices for an Angular project. When adding new elements, it will create these elements in the appropriate directory structure, generate source code, and in some cases add code to other elements within the project so that the new elements can be used wherever needed. 
+
+Prerequisites 
+
+In order to install Angular CLI, the following should be installed in the development environment: 
+
+node (at least version 4.0) 
+
+npm (at least version 3.0) 
+
+Installation 
+
+Installing Angular CLI Globally by typing the follow command: 
+
+npm install -g @angular/cli 
+
+ 
+
+This will globally install angular-cli. This will allow for the use of all the ng commands.  
+
+Create New Project 
+
+To create a new projectng new  can be used.  
+
+Issue the following command to create a new project called my-project. 
+
+ng new my-project 
+
+This will cause several things to happen: 
+
+directory my-project will be created 
+
+directory structure and source files will be generated 
+
+any needed dependencies will be installed 
+
+TypeScript will be configured 
+
+Karma test runner will be configured 
+
+Protractor end-to-end test runner will be configured 
+
+environment files will be created 
+
+Here is a screenshot of the project structure that was generated: 
+
+https://i2.wp.com/keyholesoftware.com/wp-content/uploads/my-project-After-ng-new.png?w=209&ssl=1 
+
+The purpose of this article is not to go into all the files that are generated but there are a few keys files to point out: 
+
+src/app directory: This directory contains source code, css, and html files. This is where most of the work will be done. 
+
+app.module.ts: Main NgModule for the application. Everything must belong to a module (even other modules). 
+
+main.ts: Bootstraps your application. 
+
+index.html: Main html file for your application. 
+
+Run Application 
+
+Change to the my-project directory and run the following: 
+
+ng serve 
+
+Then open a browser and point it to http://localhost:4200/. The following  
+
+Note: Running ng serve from the command line will not return control back to the command prompt. This will detect changes that are made to the project, recompile the project, and then refresh the web page. 
+
+Adding Other Elements 
+
+To add other elements to your application, either ng generate or ng g command can be used. There are many elements that can be created, but only the following elements will be covered in this article: 
+
+class 
+
+interface 
+
+enumeration 
+
+component 
+
+service 
+
+module 
+
+pipe 
+
+In order to use Angular CLI to add these elements to your application, go to the my-project directory and issue the following commands. 
+
+Note: After issuing commands, Angular CLI will display files that are generated and where they are created at. 
+
+Create A Class 
+
+To create a new class, run the following: 
+
+ng g class my-class-a 
+
+ 
+
+This will create a file called my-class-a.ts under the src/app directory. Notice that it will add .ts after the name provided. 
+
+https://i2.wp.com/keyholesoftware.com/wp-content/uploads/my-project-After-ng-g-class-my-class-a.png?w=400&ssl=1 
+
+This file is a basic class file with no decorators generated. It will export a class called MyClassA (removes dashes and uses camel case). 
+
+my-class-a.ts 
+
+1 
+
+2 
+
+export class MyClassA { 
+
+} 
+
+Create An Interface 
+
+To create a new interface, run the following: 
+
+ng g interface my-interface-a 
+
+ 
+
+This will create a file called my-interface-a.ts under the src/app directory. Notice that it will add .ts after the name provided. 
+
+https://i1.wp.com/keyholesoftware.com/wp-content/uploads/my-project-After-ng-g-interface-my-interface-a.png?resize=300%2C275&ssl=1 
+
+This file is a basic interface file with no decorator generated. It will export a class called MyInterfaceA (removes dashes and uses camel case). 
+
+my-interface-a.ts 
+
+1 
+
+2 
+
+export interface my-interface-a 
+
+} 
+
+Create An Enumeration 
+
+To create a new enumeration, run the following: 
+
+ng g enum my-num 
+
+This will create a file called my-enum.enum.ts under the src/app directory. Notice that it will add .enum.ts after the name provided. 
+
+https://i0.wp.com/keyholesoftware.com/wp-content/uploads/my-project-After-ng-g-enum-my-enum-300x278.png?resize=300%2C278&ssl=1 
+
+This file is a basic enumeration file with no decorator generated. It will export a class called MyEnum (removes dashes and uses camel case). 
+
+my-enum.enum.ts 
+
+1 
+
+2 
+
+export enum MyEnum { 
+
+} 
+
+Creating a class, interface, or enumeration are basic constructs and could be created manually just as easily, but the CLI will format them according to best practices. Now on to things that need a little more to them. 
+
+ 
+
+See Also:  React v16.0 Release Overview and Migration 
+
+ 
+
+ 
+
+Create A Component 
+
+To create a new component, run the following: 
+
+ng g component my-component-a 
+
+This will do several things: 
+
+create a directory called my-component-a under src/app directory 
+
+generate four files under that directory 
+
+my-component-a.component.css 
+
+Contains any css that would be needed for this component 
+
+Optional file that is pointed to by the component.ts file 
+
+my-component-a.component.html 
+
+Contains any html that would be needed for this component 
+
+Optional file that is pointed to by the component.ts file 
+
+html could be contained within the component.ts file, if desired 
+
+my-component-a.component.spec.ts 
+
+unit test skeleton for this component 
+
+my-component-a.component.ts 
+
+exports a class called MyComponentAComponent 
+
+implements an interface called OnInit 
+
+generates empty function called ngOnInit for OnInit interface 
+
+generates empty constructor function 
+
+decorates class with @Component 
+
+add selector for component, app-my-component-a 
+
+adds templateUrl, points to generated html file for component 
+
+adds styleUrls array, points to generated css file for component 
+
+modifies app.module.ts file, added MyComponentAComponent to declarations (every component has to belong to a module) 
+
+https://i0.wp.com/keyholesoftware.com/wp-content/uploads/my-project-After-ng-g-component-my-module-a_my-component-a.png?w=387&ssl=1 
+
+my-component-a.component.ts 
+
+1 
+
+2 
+
+3 
+
+4 
+
+5 
+
+6 
+
+7 
+
+8 
+
+9 
+
+10 
+
+11 
+
+12 
+
+13 
+
+14 
+
+15 
+
+import { Component, OnInit } from '@angular/core'; 
+
+  
+
+@Component({ 
+
+  selector: 'app-my-component-a', 
+
+  templateUrl: './my-component-a.component.html', 
+
+  styleUrls: ['./my-component-a.component.css'] 
+
+}) 
+
+export class MyComponentAComponent implements OnInit { 
+
+  
+
+  constructor() { } 
+
+    
+
+  ngOnInit() { 
+
+  } 
+
+  
+
+} 
+
+app.module.ts 
+
+1 
+
+2 
+
+3 
+
+4 
+
+5 
+
+6 
+
+7 
+
+8 
+
+9 
+
+10 
+
+11 
+
+12 
+
+13 
+
+14 
+
+15 
+
+16 
+
+17 
+
+18 
+
+19 
+
+20 
+
+21 
+
+22 
+
+import { BrowserModule } from '@angular/platform-browser'; 
+
+import { NgModule } from '@angular/core'; 
+
+import { FormsModule } from '@angular/forms'; 
+
+import { HttpModule } from '@angular/http'; 
+
+  
+
+import { AppComponent } from './app.component'; 
+
+import { MyComponentAComponent } from './my-component-a/my-component-a.component'; 
+
+  
+
+@NgModule({ 
+
+  declarations: [ 
+
+    AppComponent, 
+
+    MyComponentAComponent 
+
+  ], 
+
+  imports: [ 
+
+    BrowserModule, 
+
+    FormsModule, 
+
+    HttpModule 
+
+  ], 
+
+  providers: [], 
+
+  bootstrap: [AppComponent] 
+
+}) 
+
+export class AppModule { } 
+
+Create A Service 
+
+To create a new service, run the following; 
+
+ng g service my-service-a 
+
+This will generate a couple of files under the src/app directory: 
+
+my-service-a.service.spec.ts 
+
+unit test skeleton for this service 
+
+my-service-a.service.ts 
+
+exports a class called MyServiceAService 
+
+generates empty constructor function 
+
+decorates class with @Injectable 
+
+https://i1.wp.com/keyholesoftware.com/wp-content/uploads/my-project-After-ng-g-service-my-service-a.png?w=326&ssl=1 
+
+my-service-a.service.ts 
+
+1 
+
+2 
+
+3 
+
+4 
+
+5 
+
+6 
+
+7 
+
+8 
+
+import { Injectable } from '@angular/core'; 
+
+  
+
+@Injectable() 
+
+export class MyServiceAService { 
+
+  
+
+  constructor() { } 
+
+  
+
+} 
+
+Create A Module 
+
+To create a new module, run the following: 
+
+ng g module my-module-a 
+
+This will do a couple things: 
+
+create a directory my-module-a under src/app 
+
+generate a file under that directory called my-module-a.module.ts 
+
+exports a class name MyModuleAModule 
+
+decorates that class with @NgModule 
+
+https://i1.wp.com/keyholesoftware.com/wp-content/uploads/my-project-After-ng-g-module-my-module-a.png?w=399&ssl=1 
+
+my-module-a.module.ts 
+
+1 
+
+2 
+
+3 
+
+4 
+
+5 
+
+6 
+
+7 
+
+8 
+
+9 
+
+10 
+
+import { NgModule } from '@angular/core'; 
+
+import { CommonModule } from '@angular/common'; 
+
+  
+
+@NgModule({ 
+
+  imports: [ 
+
+    CommonModule 
+
+  ], 
+
+  declarations: [] 
+
+}) 
+
+export class MyModuleAModule { } 
+
+ 
+
+Create Component In A Module 
+
+Components can be added to generated module by changing to the module directory: 
+
+cd src/app/my-module-a 
+
+ng g component my-subcomponent-a 
+
+or by prefixing the module name to the front of the new component name: 
+
+ng g component my-module-a/my-subcomponent-a 
+
+This will do several things: 
+
+create a directory my-subcomponent-a under the src/app/my-module-a directory 
+
+generate all the component files under this directory (see Create a component section for description of files) 
+
+add MySubcomponentAComponent to the my-module-a.module.ts file 
+
+https://i0.wp.com/keyholesoftware.com/wp-content/uploads/my-project-After-ng-g-component-my-module-a_my-component-a.png?w=387&ssl=1 
+
+my-module-a.module.ts 
+
+1 
+
+2 
+
+3 
+
+4 
+
+5 
+
+6 
+
+7 
+
+8 
+
+9 
+
+10 
+
+11 
+
+import { NgModule } from '@angular/core'; 
+
+import { CommonModule } from '@angular/common'; 
+
+import { MySubcomponentAComponent } from './my-subcomponent-a/my-subcomponent-a.component'; 
+
+  
+
+@NgModule({ 
+
+  imports: [ 
+
+    CommonModule 
+
+  ], 
+
+  declarations: [MySubcomponentAComponent] 
+
+}) 
+
+export class MyModuleAModule { } 
+
+This same pattern can be used for a class, interface, enum, service, or even another module. 
+
+ 

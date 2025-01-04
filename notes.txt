@@ -1,0 +1,6 @@
+Introduction:
+1.Angular JS to Angular 7
+2.TypeScript
+3.Angular7 Components
+4.Angular7 Modules
+5.Angular7 Directives
