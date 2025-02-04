@@ -4,3 +4,36 @@ Introduction:
 3.Angular7 Components
 4.Angular7 Modules
 5.Angular7 Directives
+
+
+Intermediate:
+Angular7 DIrectives - *ngIf
+Angular7 Directives - *ngFor
+Angular7 Directives - *ngStyle
+Angular7 Directives - *ngClass
+Angular7 Directives - Custom Directives
+Angular7 Directives - * ngSwitch
+Angular7 Data Binding
+Angular7 Event Binding
+
+Advanced:
+Angualr7 pipes - string
+Angular7 pipes - Number
+Angular7 pipes - JSON
+Angular7 pipes - Date
+Angular7 pipes - Custom pipes
+Angular7 routing 
+ANgular7 new features - drag and drop
+Angular 7 new features - virtual scrolling
+
+PIpes:
+PIpes: are angular objects that takes input and transform it to desired output.
+Syntax: input | pipe-name
+Angualr in-built pipes.
+Lowercase
+Uppercase 
+Date
+Currency
+JSON
+Percentage
+Pipes can also be chained - input|pipe2|pipe2
